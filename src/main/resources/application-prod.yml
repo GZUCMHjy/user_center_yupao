@@ -1,11 +1,30 @@
-
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: Hjy123456!
-    url: jdbc:mysql://42.193.201.114:3306/user_center
+    url: jdbc:mysql://42.193.201.114:3306/yupao
   session:
+    store-type: redis
     timeout: 86400
+  redis:
+    open: false  # 是否开启redis缓存  true开启   false关闭
+    database: 0
+    host: 119.29.252.106
+    port: 6379
+    password: 947410   # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
 server:
-  address: 0.0.0.0
+  port: 8081
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: 42.193.201.114
+        same-site: lax
+        http-only: true
+        secure: false
+## 线上屏蔽 knife4j
+knife4j:
+  enable: true
+  production: true

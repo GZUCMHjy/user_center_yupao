@@ -1,7 +1,10 @@
 package com.louis.user_center.service;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import com.louis.user_center.model.domain.User;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,4 +46,12 @@ class UserServiceTest {
 //        System.out.println(userService.userLogin("louis", "12345678"));
 //
 //    }
+    @Test
+    void contextLoads() {
+        // 前端传来tag列表
+        List<String> tagsList = Arrays.asList("java","python");
+        List<User> users = userService.searchUsersByTags(tagsList);
+        Assert.assertNotNull(users);
+    }
+
 }

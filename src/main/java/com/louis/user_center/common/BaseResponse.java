@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class BaseResponse<T> implements Serializable {
     //信息码
     private int code;
-    //数据
+    //泛型数据
     private T data;
     //请求数据的信息(成功/失败)
     private String message;
@@ -26,6 +26,7 @@ public class BaseResponse<T> implements Serializable {
         this.message=message;
         this.description=description;
     }
+    // 成功的统一返回结果
     public BaseResponse(int code, T data, String message) {
 
         this(code,data,message,"");
@@ -33,6 +34,7 @@ public class BaseResponse<T> implements Serializable {
     public BaseResponse(int code, T data) {
         this(code,data,"","");
     }
+    // 失败的统一返回结果
     public BaseResponse(ErrorCode errorCode){
 
         this(errorCode.getCode(),null,errorCode.getMassage(),errorCode.getDescription());

@@ -18,6 +18,7 @@ public class BusinessException extends RuntimeException{
     }
 
     public BusinessException(ErrorCode errorCode) {
+        // 构造器继承 super 调用父类构造器（对于父类有些属性是私有的 就必须要通过构造器进行赋值初始化）
         super(errorCode.getMassage());
         this.code=errorCode.getCode();
         this.description=errorCode.getDescription();
@@ -25,7 +26,7 @@ public class BusinessException extends RuntimeException{
     public BusinessException(ErrorCode errorCode,String description){
         super(errorCode.getMassage());
         this.code=errorCode.getCode();
-        this.description=errorCode.getDescription();
+        this.description=description;
     }
 
     public int getCode() {

@@ -1,4 +1,4 @@
-package com.louis.user_center.model.domain.request;
+package com.louis.user_center.model.request;
 
 import lombok.Data;
 

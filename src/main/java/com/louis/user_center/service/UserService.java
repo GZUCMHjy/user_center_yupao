@@ -1,9 +1,12 @@
 package com.louis.user_center.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.louis.user_center.model.domain.Tag;
 import com.louis.user_center.model.domain.User;
+import com.louis.user_center.model.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
 * @author 35064
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 * @createDate 2023-03-26 01:57:16
 */
 //已有基本的CRUD的方法
+// 写在service接口的方法 通常是因为要被复用（调用）
 public interface UserService extends IService<User> {
 
     /**
@@ -46,4 +50,45 @@ public interface UserService extends IService<User> {
      */
     public int userLogout(HttpServletRequest request);
 
+    /**
+     * 通过用户标签搜索用户
+     * @param tagNameList
+     */
+    List<User>  searchUsersByTags(List<String > tagNameList);
+
+    /**
+     * 修改用户信息
+     * @param user
+     * @return
+     */
+    int updateUser(User user,User loginUser);
+
+    /**
+     * 获取登录用户的信息
+     * @param request
+     * @return
+     */
+     User getLoginUser(HttpServletRequest request);
+
+    /**
+     * 是否为管理员
+     * @param httpServletRequest
+     * @return
+     */
+     boolean isAdmin(HttpServletRequest httpServletRequest);
+
+    /**
+     * 重载isAdmin方法
+     * @param loginUser
+     * @return
+     */
+     boolean isAdmin(User loginUser);
+
+    /**
+     * 匹配用户
+     * @param num
+     * @param loginUser
+     * @return
+     */
+    List<User> matchUsers(long num, User loginUser);
 }

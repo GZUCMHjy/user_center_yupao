@@ -1,24 +1,29 @@
-package com.louis.user_center.model.domain;
+package com.louis.user_center.model.vo;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import lombok.Data;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-
-import lombok.Data;
 
 /**
- * 
- * @TableName user
+ * @author louis
+ * @version 1.0
+ * @date 2023/10/2 11:49
  */
-@TableName(value ="user")
+// 用户信息包装类 （脱敏）
 @Data
-public class User implements Serializable {
+public class UserVO implements Serializable {
+
+    private static final long serialVersionUID = 1506999077657613043L;
+
     /**
      * 用户id
      */
-    @TableId(type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -26,10 +31,6 @@ public class User implements Serializable {
      */
     private String userName;
 
-    /**
-     * 密码
-     */
-    private String userPassword;
 
     /**
      * 邮箱
@@ -61,11 +62,6 @@ public class User implements Serializable {
      */
     private Date updateTime;
 
-    /**
-     * 是否删除
-     */
-    @TableLogic
-    private Integer isDelete;
 
     /**
      * 用户账号
@@ -73,20 +69,15 @@ public class User implements Serializable {
     private String userAccount;
 
     /**
-     * 
+     *
      */
     private String avatarUrl;
 
     /**
      * 0--普通用户
-       1--管理员
+     1--管理员
      */
     private Integer userRole;
-
-    // 序列化属性
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
-
 
     /**
      * 星球编号
@@ -97,5 +88,4 @@ public class User implements Serializable {
      * 标签列表 json
      */
     private String tags;
-
 }
