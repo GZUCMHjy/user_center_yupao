@@ -16,6 +16,7 @@ import java.net.BindException;
  */
 @RestControllerAdvice
 @Slf4j
+// 两种异常类 自定义BusinessEX业务异常类 默认系统异常类RuntimeEX
 public class GlobalExceptionHandler {
     //锁定标记文件class
     @ExceptionHandler(BusinessException.class)

@@ -84,25 +84,18 @@
             <optional>true</optional>
         </dependency>
         <!--    swagger/knife4j    -->
-<!--  图像化依赖UI -->
+        <!--  图像化依赖UI -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
             <version>2.0.7</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
         <!-- https://easyexcel.opensource.alibaba.com/ -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
             <version>3.3.2</version>
-        </dependency>
-        <!--Pair jdk没有 应补充-->
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.6</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -133,7 +126,7 @@
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.7</version>
         </dependency>
-<!-- java json 反序列化-->
+        <!-- java json 反序列化-->
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>

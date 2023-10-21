@@ -23,6 +23,10 @@ public class RedissonConfig {
 
     private String host;
 
+    /**
+     * 实例并初始化Redisson
+     * @return
+     */
     @Bean
     public RedissonClient redissonClient(){
         // 1. 创建配置

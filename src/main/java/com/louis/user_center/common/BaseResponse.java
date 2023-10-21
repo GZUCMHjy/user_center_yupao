@@ -6,7 +6,7 @@ import java.io.Serializable;
 //运用泛型 提高通用性
 
 /**
- * 通用公共通用响应类
+ * 通用公共通用响应类（泛型类）
  * @param <T>
  */
 @Data
@@ -30,6 +30,11 @@ public class BaseResponse<T> implements Serializable {
     public BaseResponse(int code, T data, String message) {
 
         this(code,data,message,"");
+    }
+
+    public BaseResponse(int code, String description) {
+
+        this(code,null,"",description);
     }
     public BaseResponse(int code, T data) {
         this(code,data,"","");
